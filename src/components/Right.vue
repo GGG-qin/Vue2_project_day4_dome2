@@ -20,8 +20,9 @@ export default {
       msgFromLeft: '',
     }
   },
-  created() {
+  created() {  //在created生命周期函数中，调用 bus.$on() 方法
     //为bus绑定自定义事件
+    //bus.$on('要声明的自定义事件的名字', 事件的处理函数)
     bus.$on('share', (val) => {
       console.log('在Right组件中定义的 share 被触发了！', val);
       this.msgFromLeft = val;
@@ -35,6 +36,7 @@ export default {
       this.count += 1;
       //把自增结果，传给父组件
       this.$emit('numChange', this.count)
+      //&emit('自定义事件的名称',发送的数据)
     }
   }
 }

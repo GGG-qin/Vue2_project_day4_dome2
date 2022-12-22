@@ -27,6 +27,7 @@ export default {
   methods: {
     send() {
       //通过eventBus来发送数据
+      //bus.$emit('要触发的事件的名字', 要发送的数据)
       bus.$emit('share', this.str)
     }
   }
